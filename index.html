@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Numinest &mdash; calm, private tools for the parts of parenthood nobody prepares you for</title>
+<meta name="description" content="Numinest builds small, private iOS apps for expecting and new parents. Our first app, Birth Plan by Numinest, turns the questions you should be asked into a clear one-page birth plan you can hand to your care team.">
+<link rel="canonical" href="https://numinest.com/">
+<meta property="og:title" content="Numinest">
+<meta property="og:description" content="Calm, private iOS tools for expecting and new parents. First app: Birth Plan by Numinest.">
+<meta property="og:url" content="https://numinest.com/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://numinest.com/assets/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon_32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icon_16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#FAF6F0">
+<style>
+  :root{
+    --paper:#FAF6F0; --card:#FFFFFF; --ink:#12211D; --muted:#5A6B64;
+    --line:#E8E2D8; --forest:#1E4A40; --forest-dk:#16382F;
+    --forest-soft:#E9EFEB; --forest-line:#CFDCD6;
+    --coral:#E38A6D; --coral-deep:#9E4A2B; --coral-soft:#FBEDE6; --coral-line:#F0D8CB;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .wrap.narrow{max-width:720px;}
+  a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(30,74,64,.3);}
+  a:hover{color:var(--coral-deep);border-bottom-color:var(--coral);}
+
+  /* nav */
+  nav{border-bottom:1px solid var(--line);background:rgba(250,246,240,.93);
+    backdrop-filter:saturate(180%) blur(8px);position:sticky;top:0;z-index:10;}
+  .navin{max-width:760px;margin:0 auto;padding:13px 24px;display:flex;
+    align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17.5px;
+    letter-spacing:-.015em;color:var(--ink);border:none;}
+  .brand:hover{color:var(--forest);}
+  .brand img{width:30px;height:30px;display:block;}
+  .navlinks{display:flex;gap:20px;font-size:14.5px;}
+  .navlinks a{color:var(--muted);border:none;}
+  .navlinks a:hover{color:var(--forest);}
+
+  /* hero */
+  header.hero{padding:70px 0 12px;}
+  .herotop{display:flex;align-items:flex-start;gap:26px;}
+  .heroicon{width:92px;height:92px;flex:0 0 92px;border-radius:21px;display:block;
+    box-shadow:0 3px 14px rgba(18,33,29,.10);}
+  .eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--coral-deep);font-weight:700;margin:0 0 14px;}
+  h1{font-size:44px;line-height:1.11;margin:0 0 20px;font-weight:600;letter-spacing:-.028em;}
+  .lede{font-size:20px;line-height:1.5;color:var(--muted);margin:0 0 30px;max-width:600px;}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px;}
+  .btn{display:inline-block;background:var(--forest);color:var(--paper);
+    border:1px solid var(--forest);padding:11px 22px;border-radius:8px;
+    font-size:15.5px;font-weight:600;}
+  .btn:hover{background:var(--forest-dk);border-color:var(--forest-dk);color:var(--paper);}
+  .btn.ghost{background:transparent;color:var(--forest);border:1px solid var(--forest-line);}
+  .btn.ghost:hover{background:var(--forest-soft);border-color:var(--forest);color:var(--forest);}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;
+    color:var(--coral-deep);background:var(--coral-soft);border:1px solid var(--coral-line);
+    border-radius:20px;padding:4px 14px;font-weight:600;}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral);}
+
+  /* sections */
+  section{padding:44px 0;}
+  section.tight{padding-top:34px;}
+  h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);
+    font-weight:700;margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+  h3{font-size:21px;line-height:1.3;margin:0 0 9px;font-weight:600;letter-spacing:-.015em;}
+  p{margin:0 0 16px;}
+  p:last-child{margin-bottom:0;}
+  ul{margin:0 0 16px;padding-left:21px;}
+  li{margin-bottom:9px;}
+  li:last-child{margin-bottom:0;}
+  .note{font-size:14.5px;color:var(--muted);}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 28px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;}
+  .tile h3{font-size:17.5px;margin-bottom:7px;}
+  .tile p{font-size:15px;color:var(--muted);margin:0;}
+
+  .steps{counter-reset:s;list-style:none;margin:0;padding:0;}
+  .steps li{counter-increment:s;position:relative;padding-left:46px;margin-bottom:22px;}
+  .steps li:last-child{margin-bottom:0;}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:29px;height:29px;
+    border-radius:50%;background:var(--coral-soft);border:1px solid var(--coral-line);
+    color:var(--coral-deep);font-size:13.5px;font-weight:700;display:grid;place-items:center;}
+  .steps strong{display:block;font-size:17px;font-weight:600;margin-bottom:3px;}
+  .steps span{color:var(--muted);font-size:15.5px;}
+
+  .greenbox{background:var(--forest-soft);border:1px solid var(--forest-line);
+    border-radius:12px;padding:26px 28px;}
+  .greenbox h3{color:var(--forest);}
+  .greenbox ul{margin:14px 0 0;padding-left:20px;}
+  .greenbox li{font-size:15.5px;}
+
+  .coralbox{background:var(--coral-soft);border:1px solid var(--coral-line);
+    border-radius:12px;padding:23px 25px;}
+  .coralbox h3{color:var(--coral-deep);font-size:17.5px;}
+  .coralbox p,.coralbox li{font-size:15.5px;}
+  .coralbox ul{margin:12px 0 0;padding-left:20px;}
+
+  /* legal pages */
+  h2.doc{font-size:20px;line-height:1.3;margin:40px 0 12px;font-weight:600;
+    letter-spacing:-.015em;text-transform:none;letter-spacing:-.015em;color:var(--ink);
+    padding:22px 0 0;border-top:1px solid var(--line);border-bottom:none;}
+  h3.doc{font-size:16.5px;margin:24px 0 8px;font-weight:600;}
+  .dates{font-size:14px;color:var(--muted);margin:0;}
+  .tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;overflow:hidden;margin:0 0 16px;font-size:15px;}
+  .tbl th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;padding:11px 14px;background:#F4EFE7;
+    border-bottom:1px solid var(--line);}
+  .tbl td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .tbl tr:last-child td{border-bottom:none;}
+
+  /* support page */
+  .contact{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:28px;margin-top:30px;}
+  .contact .addr{font-size:24px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px;}
+  .meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;padding-top:18px;
+    border-top:1px solid var(--line);}
+  .meta div{font-size:14.5px;}
+  .meta .k{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+    font-weight:700;margin-bottom:4px;}
+  .qa{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:22px 24px;margin-bottom:12px;}
+  .qa h3{font-size:17.5px;margin-bottom:7px;}
+  .qa p{font-size:15.5px;color:var(--muted);margin:0;}
+  .qa p + p{margin-top:12px;}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:36px;padding:36px 0 56px;}
+  .frow{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+  .fcol h4{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+    font-weight:700;margin:0 0 10px;}
+  .fcol p,.fcol a{font-size:14.5px;margin:0 0 7px;display:block;color:var(--muted);}
+  .fcol a{border:none;}
+  .fcol a:hover{color:var(--forest);}
+  .fmark{display:flex;align-items:center;gap:9px;margin-bottom:12px;}
+  .fmark img{width:24px;height:24px;display:block;}
+  .fmark span{font-weight:600;font-size:15px;color:var(--ink);letter-spacing:-.015em;}
+  .legal{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted);}
+  footer.slim{margin-top:52px;padding:30px 0 56px;font-size:14px;color:var(--muted);}
+  footer.slim a{color:var(--muted);border:none;}
+  footer.slim a:hover{color:var(--forest);}
+
+  @media (max-width:600px){
+    header.hero{padding-top:48px;}
+    .herotop{flex-direction:column;gap:20px;}
+    .heroicon{width:76px;height:76px;flex-basis:76px;border-radius:17px;}
+    h1{font-size:33px;}
+    .lede{font-size:18px;}
+    .navlinks{gap:15px;font-size:14px;}
+    h2.doc{font-size:18.5px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html"><img src="assets/numinest-mark.svg" alt="" width="30" height="30">Numinest</a>
+    <div class="navlinks">
+      <a href="#app">The app</a>
+      <a href="#privacy">Privacy</a>
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="herotop">
+      <img class="heroicon" src="assets/numinest-app-icon.svg" alt="The Birth Plan by Numinest app icon: a winding path rising toward a star.">
+      <div>
+        <p class="eyebrow">Numinest LLC &middot; Michigan</p>
+        <h1>A birth plan that actually fits on one page.</h1>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:28px;">Numinest makes small, private iOS apps for expecting and
+      new parents. Our first app walks you through the decisions worth thinking about before labor &mdash;
+      then prints them as a single clear page your care team can read at a glance.</p>
+    <div class="cta">
+      <a class="btn" href="mailto:hello@numinest.com?subject=Tell%20me%20when%20Birth%20Plan%20launches&amp;body=Hi%20Numinest%20%E2%80%94%20please%20let%20me%20know%20when%20Birth%20Plan%20is%20available%20on%20the%20App%20Store.">Tell me when it launches</a>
+      <a class="btn ghost" href="#app">What it does</a>
+    </div>
+    <span class="status">In development &middot; coming to iOS</span>
+  </header>
+
+  <section id="app">
+    <h2>Birth Plan by Numinest</h2>
+    <h3>Most birth plans are three pages nobody reads.</h3>
+    <p>A midwife scanning your notes between contractions has about fifteen seconds. A birth plan
+      only works if the important things are visible in that fifteen seconds &mdash; which means the
+      hard part isn't writing it, it's deciding what earns a place on the page.</p>
+    <p>Birth Plan by Numinest is the guided version of that process. It asks you the questions
+      a good prenatal class would ask, explains the terms you haven't met before in plain
+      language, and lets you say &ldquo;I don't mind&rdquo; as often as you like. Then it lays your answers
+      out as one printable page &mdash; preferences first, the rest condensed underneath.</p>
+
+    <div class="grid" style="margin-top:26px;">
+      <div class="tile">
+        <h3>Guided, not blank</h3>
+        <p>Every question comes with a short explanation of what's actually being asked, so you're
+          never guessing at terminology mid-form.</p>
+      </div>
+      <div class="tile">
+        <h3>One page, by design</h3>
+        <p>The output is a single sheet built to be read quickly under pressure &mdash; not a document
+          that gets filed and forgotten.</p>
+      </div>
+      <div class="tile">
+        <h3>Room to be unsure</h3>
+        <p>&ldquo;No strong preference&rdquo; is a valid answer throughout. A plan is a starting point for a
+          conversation, not a contract.</p>
+      </div>
+      <div class="tile">
+        <h3>Hospital bag checklist</h3>
+        <p>The other list you'll want on paper, generated alongside your plan.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="tight">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Answer at your own pace</strong><span>Work through the sections whenever you have
+        ten minutes. Everything saves as you go, on your device.</span></li>
+      <li><strong>Review the summary</strong><span>See your whole plan at once and change your mind
+        as often as you want &mdash; nothing is final until you print it.</span></li>
+      <li><strong>Print or share the one-pager</strong><span>Export a clean single page for your
+        hospital bag, your partner, and your notes.</span></li>
+      <li><strong>Talk it through with your provider</strong><span>The page is designed to be handed
+        over and discussed. That conversation is the point.</span></li>
+    </ol>
+  </section>
+
+  <section id="privacy" class="tight">
+    <h2>Privacy</h2>
+    <div class="greenbox">
+      <h3>No accounts. No data collection. It stays on your phone.</h3>
+      <p style="font-size:15.5px;">A birth plan contains some of the most personal information
+        you will ever write down. We decided the simplest way to protect it was to never receive
+        it in the first place.</p>
+      <ul>
+        <li>There is no sign-up, no login, and no user account.</li>
+        <li>Your answers are stored on your device and are not transmitted to us or anyone else.</li>
+        <li>No analytics SDKs, no advertising SDKs, no third-party trackers.</li>
+        <li>Nothing to delete from our servers, because there is nothing on them.</li>
+      </ul>
+      <p style="margin-top:16px;font-size:15.5px;">Read the full <a href="privacy.html">privacy policy</a>.</p>
+    </div>
+  </section>
+
+  <section class="tight">
+    <h2>About Numinest</h2>
+    <div class="card">
+      <p>Numinest LLC is an independent software company registered in Michigan, United States.
+        It was started by a filmmaker who went looking for a decent birth plan tool while his wife
+        was pregnant, found forms and PDFs and apps that wanted an account, and built the thing
+        he had wanted instead.</p>
+      <p>We build a small number of apps for a specific stretch of life &mdash; pregnancy, birth, and the
+        first months after &mdash; and we try to make each of them calm, quick to use, and private by
+        construction rather than by promise.</p>
+      <p class="note" style="margin-top:20px;">Questions, press, or partnership:
+        <a href="mailto:hello@numinest.com">hello@numinest.com</a>. We read everything.</p>
+    </div>
+  </section>
+
+  <section class="tight" style="padding-bottom:16px;">
+    <h2>Not medical advice</h2>
+    <p class="note">Birth Plan by Numinest is an organizational tool, not a medical service. It does
+      not provide medical advice, diagnosis, or treatment, and it is not a substitute for the
+      guidance of your midwife, obstetrician, or other qualified health professional. Always
+      discuss your birth preferences with your care team &mdash; and know that plans change, often for
+      good reasons.</p>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="frow">
+      <div class="fcol">
+        <div class="fmark"><img src="assets/numinest-mark.svg" alt="" width="24" height="24"><span>Numinest</span></div>
+        <p>Numinest LLC</p>
+        <p>Farmington Hills, Michigan, USA</p>
+        <a href="mailto:hello@numinest.com">hello@numinest.com</a>
+      </div>
+      <div class="fcol">
+        <h4>Pages</h4>
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy policy</a>
+        <a href="support.html">Support</a>
+      </div>
+      <div class="fcol">
+        <h4>Elsewhere</h4>
+        <a href="https://www.instagram.com/hello_numinest/" rel="me">Instagram</a>
+        <a href="https://x.com/hello_numinest" rel="me">X</a>
+        <a href="https://www.tiktok.com/@hello_numinest" rel="me">TikTok</a>
+        <a href="https://www.youtube.com/@hello_numinest" rel="me">YouTube</a>
+      </div>
+    </div>
+    <p class="legal">&copy; 2026 Numinest LLC. All rights reserved. Birth Plan by Numinest is in
+      development and is not yet available on the App Store.</p>
+  </div>
+</footer>
+
+</body>
+</html>

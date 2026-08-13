@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy &mdash; Numinest</title>
+<meta name="description" content="Privacy policy for Numinest LLC and Birth Plan by Numinest. No accounts, no data collection — your answers stay on your device.">
+<link rel="canonical" href="https://numinest.com/privacy.html">
+<meta property="og:image" content="https://numinest.com/assets/og-image.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon_32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icon_16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#FAF6F0">
+<style>
+  :root{
+    --paper:#FAF6F0; --card:#FFFFFF; --ink:#12211D; --muted:#5A6B64;
+    --line:#E8E2D8; --forest:#1E4A40; --forest-dk:#16382F;
+    --forest-soft:#E9EFEB; --forest-line:#CFDCD6;
+    --coral:#E38A6D; --coral-deep:#9E4A2B; --coral-soft:#FBEDE6; --coral-line:#F0D8CB;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .wrap.narrow{max-width:720px;}
+  a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(30,74,64,.3);}
+  a:hover{color:var(--coral-deep);border-bottom-color:var(--coral);}
+
+  /* nav */
+  nav{border-bottom:1px solid var(--line);background:rgba(250,246,240,.93);
+    backdrop-filter:saturate(180%) blur(8px);position:sticky;top:0;z-index:10;}
+  .navin{max-width:760px;margin:0 auto;padding:13px 24px;display:flex;
+    align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17.5px;
+    letter-spacing:-.015em;color:var(--ink);border:none;}
+  .brand:hover{color:var(--forest);}
+  .brand img{width:30px;height:30px;display:block;}
+  .navlinks{display:flex;gap:20px;font-size:14.5px;}
+  .navlinks a{color:var(--muted);border:none;}
+  .navlinks a:hover{color:var(--forest);}
+
+  /* hero */
+  header.hero{padding:70px 0 12px;}
+  .herotop{display:flex;align-items:flex-start;gap:26px;}
+  .heroicon{width:92px;height:92px;flex:0 0 92px;border-radius:21px;display:block;
+    box-shadow:0 3px 14px rgba(18,33,29,.10);}
+  .eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--coral-deep);font-weight:700;margin:0 0 14px;}
+  h1{font-size:44px;line-height:1.11;margin:0 0 20px;font-weight:600;letter-spacing:-.028em;}
+  .lede{font-size:20px;line-height:1.5;color:var(--muted);margin:0 0 30px;max-width:600px;}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px;}
+  .btn{display:inline-block;background:var(--forest);color:var(--paper);
+    border:1px solid var(--forest);padding:11px 22px;border-radius:8px;
+    font-size:15.5px;font-weight:600;}
+  .btn:hover{background:var(--forest-dk);border-color:var(--forest-dk);color:var(--paper);}
+  .btn.ghost{background:transparent;color:var(--forest);border:1px solid var(--forest-line);}
+  .btn.ghost:hover{background:var(--forest-soft);border-color:var(--forest);color:var(--forest);}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;
+    color:var(--coral-deep);background:var(--coral-soft);border:1px solid var(--coral-line);
+    border-radius:20px;padding:4px 14px;font-weight:600;}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral);}
+
+  /* sections */
+  section{padding:44px 0;}
+  section.tight{padding-top:34px;}
+  h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);
+    font-weight:700;margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+  h3{font-size:21px;line-height:1.3;margin:0 0 9px;font-weight:600;letter-spacing:-.015em;}
+  p{margin:0 0 16px;}
+  p:last-child{margin-bottom:0;}
+  ul{margin:0 0 16px;padding-left:21px;}
+  li{margin-bottom:9px;}
+  li:last-child{margin-bottom:0;}
+  .note{font-size:14.5px;color:var(--muted);}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 28px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;}
+  .tile h3{font-size:17.5px;margin-bottom:7px;}
+  .tile p{font-size:15px;color:var(--muted);margin:0;}
+
+  .steps{counter-reset:s;list-style:none;margin:0;padding:0;}
+  .steps li{counter-increment:s;position:relative;padding-left:46px;margin-bottom:22px;}
+  .steps li:last-child{margin-bottom:0;}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:29px;height:29px;
+    border-radius:50%;background:var(--coral-soft);border:1px solid var(--coral-line);
+    color:var(--coral-deep);font-size:13.5px;font-weight:700;display:grid;place-items:center;}
+  .steps strong{display:block;font-size:17px;font-weight:600;margin-bottom:3px;}
+  .steps span{color:var(--muted);font-size:15.5px;}
+
+  .greenbox{background:var(--forest-soft);border:1px solid var(--forest-line);
+    border-radius:12px;padding:26px 28px;}
+  .greenbox h3{color:var(--forest);}
+  .greenbox ul{margin:14px 0 0;padding-left:20px;}
+  .greenbox li{font-size:15.5px;}
+
+  .coralbox{background:var(--coral-soft);border:1px solid var(--coral-line);
+    border-radius:12px;padding:23px 25px;}
+  .coralbox h3{color:var(--coral-deep);font-size:17.5px;}
+  .coralbox p,.coralbox li{font-size:15.5px;}
+  .coralbox ul{margin:12px 0 0;padding-left:20px;}
+
+  /* legal pages */
+  h2.doc{font-size:20px;line-height:1.3;margin:40px 0 12px;font-weight:600;
+    letter-spacing:-.015em;text-transform:none;letter-spacing:-.015em;color:var(--ink);
+    padding:22px 0 0;border-top:1px solid var(--line);border-bottom:none;}
+  h3.doc{font-size:16.5px;margin:24px 0 8px;font-weight:600;}
+  .dates{font-size:14px;color:var(--muted);margin:0;}
+  .tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;overflow:hidden;margin:0 0 16px;font-size:15px;}
+  .tbl th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;padding:11px 14px;background:#F4EFE7;
+    border-bottom:1px solid var(--line);}
+  .tbl td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .tbl tr:last-child td{border-bottom:none;}
+
+  /* support page */
+  .contact{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:28px;margin-top:30px;}
+  .contact .addr{font-size:24px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px;}
+  .meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;padding-top:18px;
+    border-top:1px solid var(--line);}
+  .meta div{font-size:14.5px;}
+  .meta .k{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+    font-weight:700;margin-bottom:4px;}
+  .qa{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:22px 24px;margin-bottom:12px;}
+  .qa h3{font-size:17.5px;margin-bottom:7px;}
+  .qa p{font-size:15.5px;color:var(--muted);margin:0;}
+  .qa p + p{margin-top:12px;}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:36px;padding:36px 0 56px;}
+  .frow{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+  .fcol h4{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+    font-weight:700;margin:0 0 10px;}
+  .fcol p,.fcol a{font-size:14.5px;margin:0 0 7px;display:block;color:var(--muted);}
+  .fcol a{border:none;}
+  .fcol a:hover{color:var(--forest);}
+  .fmark{display:flex;align-items:center;gap:9px;margin-bottom:12px;}
+  .fmark img{width:24px;height:24px;display:block;}
+  .fmark span{font-weight:600;font-size:15px;color:var(--ink);letter-spacing:-.015em;}
+  .legal{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted);}
+  footer.slim{margin-top:52px;padding:30px 0 56px;font-size:14px;color:var(--muted);}
+  footer.slim a{color:var(--muted);border:none;}
+  footer.slim a:hover{color:var(--forest);}
+
+  @media (max-width:600px){
+    header.hero{padding-top:48px;}
+    .herotop{flex-direction:column;gap:20px;}
+    .heroicon{width:76px;height:76px;flex-basis:76px;border-radius:17px;}
+    h1{font-size:33px;}
+    .lede{font-size:18px;}
+    .navlinks{gap:15px;font-size:14px;}
+    h2.doc{font-size:18.5px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html"><img src="assets/numinest-mark.svg" alt="" width="30" height="30">Numinest</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap narrow">
+
+  <header class="hero" style="padding:58px 0 4px;">
+    <p class="eyebrow">Numinest LLC</p>
+    <h1 style="font-size:38px;margin-bottom:12px;">Privacy Policy</h1>
+    <p class="dates">Effective 5 August 2026 &middot; Last updated 13 August 2026</p>
+  </header>
+
+  <div class="greenbox" style="margin:26px 0 8px;">
+    <p style="font-size:16.5px;"><strong>The short version.</strong> Birth Plan by Numinest has no
+      accounts and no servers. Everything you enter stays on your device. We do not collect,
+      receive, store, sell, or share your personal information. This policy explains that in full,
+      and covers the two places where limited information does exist: this website, and any email
+      you choose to send us.</p>
+  </div>
+
+  <h2 class="doc">1. Who we are</h2>
+  <p>This policy is issued by <strong>Numinest LLC</strong>, a limited liability company registered
+    in the State of Michigan, United States (&ldquo;Numinest&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;). It applies to the
+    <strong>numinest.com</strong> website and to the mobile applications we publish, including
+    <strong>Birth Plan by Numinest</strong> (the &ldquo;App&rdquo;).</p>
+  <p>You can reach us at any time at <a href="mailto:hello@numinest.com">hello@numinest.com</a>.</p>
+
+  <h2 class="doc">2. What the App collects</h2>
+  <p><strong>Nothing.</strong> The App does not collect personal data.</p>
+  <p>Concretely, this means:</p>
+  <ul>
+    <li><strong>No account is required or offered.</strong> There is no sign-up, no login, no
+      password, and no profile.</li>
+    <li><strong>Your answers never leave your device.</strong> The birth-plan questionnaire, your
+      responses, your checklists and the documents you generate are stored locally in the App's own
+      storage on your phone or tablet. They are not transmitted to Numinest and not transmitted to
+      any third party.</li>
+    <li><strong>No analytics or advertising.</strong> The App contains no analytics SDK, no crash-
+      reporting SDK, no advertising SDK, no attribution SDK, and no third-party trackers. We do not
+      know how many screens you opened or which questions you answered.</li>
+    <li><strong>No device or advertising identifiers</strong> are read or transmitted. We do not use
+      the IDFA, and we do not fingerprint your device.</li>
+    <li><strong>No location, contacts, photos, microphone or camera access</strong> is requested.</li>
+    <li><strong>No third-party data sharing or sale.</strong> Because we hold no data, there is
+      nothing to share or sell. We have never sold personal information and will not.</li>
+  </ul>
+  <p>If you use your device's own iCloud or encrypted-backup features, a copy of the App's local
+    data may be included in that backup. That backup is governed by Apple's terms and your device
+    settings, and remains outside our reach and control at all times.</p>
+
+  <h3 class="doc">Printing and sharing your plan</h3>
+  <p>When you print, save, or share the one-page plan the App generates, the file is handed to your
+    device's own printing and sharing system. Where it goes next &mdash; a printer, a Files folder, a
+    message to your partner &mdash; is entirely your choice, and it does not pass through Numinest.</p>
+
+  <h3 class="doc">Deleting your data</h3>
+  <p>Deleting the App from your device removes the data it stored there. There is no separate
+    deletion request to make, because we hold no copy of it.</p>
+
+  <h2 class="doc">3. What this website collects</h2>
+  <p>This website is a set of static pages. It sets <strong>no cookies</strong>, runs
+    <strong>no analytics</strong>, embeds no advertising, and contains no third-party tracking
+    scripts. There are no forms on this site and nothing on it asks you to identify yourself. Every
+    image and font it uses is served from this domain, so loading a page makes no request to any
+    other company.</p>
+  <p>As with any website, the hosting provider that serves these pages automatically processes
+    limited technical information &mdash; such as the IP address making the request, the requested page,
+    and the browser's user-agent string &mdash; in server logs, for the purpose of delivering the pages
+    and protecting the service from abuse. We do not use those logs to build profiles, we do not
+    combine them with any other information, and we do not use them for advertising.</p>
+  <p>Links to our accounts on Instagram, X, TikTok and YouTube are plain links. We do not embed
+    those platforms' scripts or pixels on this site, so those companies learn nothing about your
+    visit unless you click through to them, at which point their own privacy policies apply.</p>
+
+  <h2 class="doc">4. Email you send us</h2>
+  <p>If you email <a href="mailto:hello@numinest.com">hello@numinest.com</a>, we receive whatever
+    you put in that email &mdash; at minimum your email address and your message &mdash; and we keep it for as
+    long as needed to answer you and to maintain a record of the correspondence. We use it only to
+    reply to you. We do not add you to a marketing list, and we do not share your message with
+    anyone outside Numinest. You can ask us to delete the correspondence at any time.</p>
+
+  <h2 class="doc">5. Summary table</h2>
+  <table class="tbl">
+    <thead>
+      <tr><th>Category</th><th>Collected by the App</th><th>Collected by this website</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Name, email, contact info</td><td>No</td><td>No &mdash; only if you email us</td></tr>
+      <tr><td>Health or pregnancy information</td><td>No &mdash; stays on your device</td><td>No</td></tr>
+      <tr><td>Identifiers (account ID, device ID, IDFA)</td><td>No</td><td>No</td></tr>
+      <tr><td>Usage data / analytics</td><td>No</td><td>No</td></tr>
+      <tr><td>Location</td><td>No</td><td>No</td></tr>
+      <tr><td>Cookies</td><td>No</td><td>No</td></tr>
+      <tr><td>Diagnostic / server logs</td><td>No</td><td>Yes &mdash; by the hosting provider, for delivery and abuse prevention</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="doc">6. Children</h2>
+  <p>Our apps and this website are intended for adults. We do not knowingly collect personal
+    information from anyone, including children under 13 (or the equivalent minimum age in your
+    jurisdiction). Since the App collects no personal information at all, it collects none from
+    children. If you believe a child has sent us personal information by email, contact us and we
+    will delete it.</p>
+
+  <h2 class="doc">7. Your rights</h2>
+  <p>Depending on where you live &mdash; for example under the EU/UK General Data Protection Regulation,
+    or under California law including the CCPA/CPRA &mdash; you may have rights to access, correct,
+    delete, or port personal information about you, to object to or restrict its processing, and to
+    not be discriminated against for exercising those rights.</p>
+  <p>These rights are straightforward to honor here: for the App we hold no personal information
+    about you, so there is nothing to access, export, correct, or delete on our side. For email
+    correspondence, write to <a href="mailto:hello@numinest.com">hello@numinest.com</a> and we will
+    act on your request. We do not sell or share personal information as those terms are defined
+    under California law, and we do not engage in targeted advertising.</p>
+  <p>If you are in the EEA or UK and believe we have handled your information improperly, you also
+    have the right to complain to your national data protection authority.</p>
+
+  <h2 class="doc">8. Security</h2>
+  <p>The strongest security measure available to us is the one we have chosen: not collecting the
+    data. Your plan lives on your device, protected by your device's own passcode, biometrics and
+    encryption. This website is served over HTTPS.</p>
+
+  <h2 class="doc">9. International users</h2>
+  <p>Numinest LLC is based in the United States. Because the App transmits no personal data, using
+    it does not involve an international transfer of your information. Email you send us is
+    received and stored in the United States.</p>
+
+  <h2 class="doc">10. Changes to this policy</h2>
+  <p>If we change this policy we will update the &ldquo;last updated&rdquo; date above and post the new version
+    on this page. If a future version of an app ever collects data &mdash; which would be a deliberate
+    departure from how we build &mdash; we will say so plainly here and in the App Store listing before
+    it ships, not quietly afterwards.</p>
+
+  <h2 class="doc">11. Contact</h2>
+  <p>Numinest LLC<br>
+    Farmington Hills, Michigan, United States<br>
+    <a href="mailto:hello@numinest.com">hello@numinest.com</a></p>
+
+</div>
+
+<footer class="slim">
+  <div class="wrap narrow">
+    &copy; 2026 Numinest LLC &middot;
+    <a href="index.html">Home</a> &middot;
+    <a href="privacy.html">Privacy policy</a> &middot;
+    <a href="support.html">Support</a>
+  </div>
+</footer>
+
+</body>
+</html>

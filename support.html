@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support &mdash; Numinest</title>
+<meta name="description" content="Support for Birth Plan by Numinest. Contact hello@numinest.com — a real person reads every message.">
+<link rel="canonical" href="https://numinest.com/support.html">
+<meta property="og:image" content="https://numinest.com/assets/og-image.png">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon_32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/icon_16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#FAF6F0">
+<style>
+  :root{
+    --paper:#FAF6F0; --card:#FFFFFF; --ink:#12211D; --muted:#5A6B64;
+    --line:#E8E2D8; --forest:#1E4A40; --forest-dk:#16382F;
+    --forest-soft:#E9EFEB; --forest-line:#CFDCD6;
+    --coral:#E38A6D; --coral-deep:#9E4A2B; --coral-soft:#FBEDE6; --coral-line:#F0D8CB;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font:17px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:760px;margin:0 auto;padding:0 24px;}
+  .wrap.narrow{max-width:720px;}
+  a{color:var(--forest);text-decoration:none;border-bottom:1px solid rgba(30,74,64,.3);}
+  a:hover{color:var(--coral-deep);border-bottom-color:var(--coral);}
+
+  /* nav */
+  nav{border-bottom:1px solid var(--line);background:rgba(250,246,240,.93);
+    backdrop-filter:saturate(180%) blur(8px);position:sticky;top:0;z-index:10;}
+  .navin{max-width:760px;margin:0 auto;padding:13px 24px;display:flex;
+    align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:17.5px;
+    letter-spacing:-.015em;color:var(--ink);border:none;}
+  .brand:hover{color:var(--forest);}
+  .brand img{width:30px;height:30px;display:block;}
+  .navlinks{display:flex;gap:20px;font-size:14.5px;}
+  .navlinks a{color:var(--muted);border:none;}
+  .navlinks a:hover{color:var(--forest);}
+
+  /* hero */
+  header.hero{padding:70px 0 12px;}
+  .herotop{display:flex;align-items:flex-start;gap:26px;}
+  .heroicon{width:92px;height:92px;flex:0 0 92px;border-radius:21px;display:block;
+    box-shadow:0 3px 14px rgba(18,33,29,.10);}
+  .eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--coral-deep);font-weight:700;margin:0 0 14px;}
+  h1{font-size:44px;line-height:1.11;margin:0 0 20px;font-weight:600;letter-spacing:-.028em;}
+  .lede{font-size:20px;line-height:1.5;color:var(--muted);margin:0 0 30px;max-width:600px;}
+  .cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:16px;}
+  .btn{display:inline-block;background:var(--forest);color:var(--paper);
+    border:1px solid var(--forest);padding:11px 22px;border-radius:8px;
+    font-size:15.5px;font-weight:600;}
+  .btn:hover{background:var(--forest-dk);border-color:var(--forest-dk);color:var(--paper);}
+  .btn.ghost{background:transparent;color:var(--forest);border:1px solid var(--forest-line);}
+  .btn.ghost:hover{background:var(--forest-soft);border-color:var(--forest);color:var(--forest);}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;
+    color:var(--coral-deep);background:var(--coral-soft);border:1px solid var(--coral-line);
+    border-radius:20px;padding:4px 14px;font-weight:600;}
+  .status::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--coral);}
+
+  /* sections */
+  section{padding:44px 0;}
+  section.tight{padding-top:34px;}
+  h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--forest);
+    font-weight:700;margin:0 0 18px;padding-bottom:8px;border-bottom:1px solid var(--line);}
+  h3{font-size:21px;line-height:1.3;margin:0 0 9px;font-weight:600;letter-spacing:-.015em;}
+  p{margin:0 0 16px;}
+  p:last-child{margin-bottom:0;}
+  ul{margin:0 0 16px;padding-left:21px;}
+  li{margin-bottom:9px;}
+  li:last-child{margin-bottom:0;}
+  .note{font-size:14.5px;color:var(--muted);}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:26px 28px;}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;}
+  .tile{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px 24px;}
+  .tile h3{font-size:17.5px;margin-bottom:7px;}
+  .tile p{font-size:15px;color:var(--muted);margin:0;}
+
+  .steps{counter-reset:s;list-style:none;margin:0;padding:0;}
+  .steps li{counter-increment:s;position:relative;padding-left:46px;margin-bottom:22px;}
+  .steps li:last-child{margin-bottom:0;}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:1px;width:29px;height:29px;
+    border-radius:50%;background:var(--coral-soft);border:1px solid var(--coral-line);
+    color:var(--coral-deep);font-size:13.5px;font-weight:700;display:grid;place-items:center;}
+  .steps strong{display:block;font-size:17px;font-weight:600;margin-bottom:3px;}
+  .steps span{color:var(--muted);font-size:15.5px;}
+
+  .greenbox{background:var(--forest-soft);border:1px solid var(--forest-line);
+    border-radius:12px;padding:26px 28px;}
+  .greenbox h3{color:var(--forest);}
+  .greenbox ul{margin:14px 0 0;padding-left:20px;}
+  .greenbox li{font-size:15.5px;}
+
+  .coralbox{background:var(--coral-soft);border:1px solid var(--coral-line);
+    border-radius:12px;padding:23px 25px;}
+  .coralbox h3{color:var(--coral-deep);font-size:17.5px;}
+  .coralbox p,.coralbox li{font-size:15.5px;}
+  .coralbox ul{margin:12px 0 0;padding-left:20px;}
+
+  /* legal pages */
+  h2.doc{font-size:20px;line-height:1.3;margin:40px 0 12px;font-weight:600;
+    letter-spacing:-.015em;text-transform:none;letter-spacing:-.015em;color:var(--ink);
+    padding:22px 0 0;border-top:1px solid var(--line);border-bottom:none;}
+  h3.doc{font-size:16.5px;margin:24px 0 8px;font-weight:600;}
+  .dates{font-size:14px;color:var(--muted);margin:0;}
+  .tbl{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);
+    border-radius:10px;overflow:hidden;margin:0 0 16px;font-size:15px;}
+  .tbl th{text-align:left;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);font-weight:700;padding:11px 14px;background:#F4EFE7;
+    border-bottom:1px solid var(--line);}
+  .tbl td{padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top;}
+  .tbl tr:last-child td{border-bottom:none;}
+
+  /* support page */
+  .contact{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:28px;margin-top:30px;}
+  .contact .addr{font-size:24px;font-weight:600;letter-spacing:-.02em;margin:0 0 8px;}
+  .meta{display:flex;gap:26px;flex-wrap:wrap;margin-top:20px;padding-top:18px;
+    border-top:1px solid var(--line);}
+  .meta div{font-size:14.5px;}
+  .meta .k{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+    font-weight:700;margin-bottom:4px;}
+  .qa{background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:22px 24px;margin-bottom:12px;}
+  .qa h3{font-size:17.5px;margin-bottom:7px;}
+  .qa p{font-size:15.5px;color:var(--muted);margin:0;}
+  .qa p + p{margin-top:12px;}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);margin-top:36px;padding:36px 0 56px;}
+  .frow{display:flex;justify-content:space-between;gap:28px;flex-wrap:wrap;}
+  .fcol h4{font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);
+    font-weight:700;margin:0 0 10px;}
+  .fcol p,.fcol a{font-size:14.5px;margin:0 0 7px;display:block;color:var(--muted);}
+  .fcol a{border:none;}
+  .fcol a:hover{color:var(--forest);}
+  .fmark{display:flex;align-items:center;gap:9px;margin-bottom:12px;}
+  .fmark img{width:24px;height:24px;display:block;}
+  .fmark span{font-weight:600;font-size:15px;color:var(--ink);letter-spacing:-.015em;}
+  .legal{margin-top:30px;padding-top:18px;border-top:1px solid var(--line);
+    font-size:13px;color:var(--muted);}
+  footer.slim{margin-top:52px;padding:30px 0 56px;font-size:14px;color:var(--muted);}
+  footer.slim a{color:var(--muted);border:none;}
+  footer.slim a:hover{color:var(--forest);}
+
+  @media (max-width:600px){
+    header.hero{padding-top:48px;}
+    .herotop{flex-direction:column;gap:20px;}
+    .heroicon{width:76px;height:76px;flex-basis:76px;border-radius:17px;}
+    h1{font-size:33px;}
+    .lede{font-size:18px;}
+    .navlinks{gap:15px;font-size:14px;}
+    h2.doc{font-size:18.5px;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="navin">
+    <a class="brand" href="index.html"><img src="assets/numinest-mark.svg" alt="" width="30" height="30">Numinest</a>
+    <div class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+    </div>
+  </div>
+</nav>
+
+<div class="wrap narrow">
+
+  <header class="hero" style="padding:58px 0 4px;">
+    <p class="eyebrow">Numinest LLC</p>
+    <h1 style="font-size:38px;margin-bottom:14px;">Support</h1>
+    <p class="lede" style="font-size:19px;margin:0;">One inbox, read by a person, usually the person
+      who built the app.</p>
+  </header>
+
+  <div class="contact">
+    <p class="addr"><a href="mailto:hello@numinest.com">hello@numinest.com</a></p>
+    <p class="note">Email is the only support channel &mdash; we would rather answer well in one place
+      than badly in five. Please include your device model and iOS version if you are reporting
+      something broken; it saves a round trip.</p>
+    <div class="meta">
+      <div><div class="k">Response time</div>Usually within 2 business days</div>
+      <div><div class="k">Languages</div>English, French</div>
+      <div><div class="k">Company</div>Numinest LLC, Michigan, USA</div>
+    </div>
+  </div>
+
+  <h2 style="margin-top:46px;">Common questions</h2>
+
+  <div class="qa">
+    <h3>Is Birth Plan by Numinest available yet?</h3>
+    <p>Not yet &mdash; it is in development and heading for the iOS App Store. Email us and we will let
+      you know the day it goes live. That is the only thing we will ever email you about.</p>
+  </div>
+
+  <div class="qa">
+    <h3>How do I get my birth plan onto paper?</h3>
+    <p>The App generates a single printable page and hands it to your iPhone or iPad's standard
+      print and share sheet. From there you can send it to an AirPrint printer, save it to Files,
+      or share it to your partner or your provider like any other document.</p>
+  </div>
+
+  <div class="qa">
+    <h3>I changed my mind about an answer. Can I edit my plan?</h3>
+    <p>Yes, at any point. Nothing is locked in &mdash; you can revisit any question and reprint. A birth
+      plan is meant to evolve as you learn more and talk to your care team.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Where is my data stored? Can you recover it if I lose my phone?</h3>
+    <p>Your answers are stored on your device only. We never receive them, which is deliberate &mdash; it
+      is the strongest privacy guarantee we can offer.</p>
+    <p>The trade-off is real and worth stating plainly: because we hold no copy, we cannot restore
+      your plan if you lose or wipe your device. If your device backups are turned on, your plan is
+      included in those. Otherwise, printing or saving a copy of the finished page is the reliable
+      backup &mdash; which is where most people end up anyway.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Do I need an account?</h3>
+    <p>No. There is no sign-up and no login. Open the app and start. See the
+      <a href="privacy.html">privacy policy</a> for the full picture.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Something in the app is wrong, unclear, or worded badly.</h3>
+    <p>Please tell us &mdash; this is the feedback we most want. The explanations in the app are written
+      to be understandable rather than exhaustive, and we would rather hear that a section reads
+      badly to a nurse, a doula, or a first-time parent than not hear it.</p>
+  </div>
+
+  <div class="qa">
+    <h3>Can I request a refund?</h3>
+    <p>Purchases made through the App Store are handled by Apple, not by us, so refunds go through
+      Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>. If
+      something went wrong, email us as well &mdash; we would like to know about it either way.</p>
+  </div>
+
+  <h2 style="margin-top:46px;">Please read</h2>
+  <div class="coralbox">
+    <h3>We cannot give medical advice</h3>
+    <p>Birth Plan by Numinest is an organizational tool. We are not clinicians and we cannot advise
+      you on your pregnancy, your labor, or any decision in your plan. Those conversations belong
+      with your midwife, obstetrician, or other qualified health professional.</p>
+    <ul>
+      <li>For questions about your pregnancy or your options, speak to your care team.</li>
+      <li>If you are worried about symptoms right now, contact your provider or your local
+        emergency number without waiting for a reply from us.</li>
+      <li>We will always redirect clinical questions rather than guess at an answer.</li>
+    </ul>
+  </div>
+
+  <h2 style="margin-top:46px;">Legal</h2>
+  <p class="note">Numinest LLC &middot; Farmington Hills, Michigan, United States &middot;
+    <a href="mailto:hello@numinest.com">hello@numinest.com</a><br>
+    Privacy policy: <a href="privacy.html">numinest.com/privacy.html</a></p>
+
+</div>
+
+<footer class="slim">
+  <div class="wrap narrow">
+    &copy; 2026 Numinest LLC &middot;
+    <a href="index.html">Home</a> &middot;
+    <a href="privacy.html">Privacy policy</a> &middot;
+    <a href="support.html">Support</a>
+  </div>
+</footer>
+
+</body>
+</html>
